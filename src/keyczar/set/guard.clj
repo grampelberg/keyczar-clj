@@ -6,5 +6,5 @@
   (Crypter. (set/reader name)))
 
 (defn create [name]
-  (set/create name "RSA_PRIV")
+  (set/save (set/create name "RSA_PRIV"))
   (open name))

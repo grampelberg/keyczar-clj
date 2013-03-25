@@ -3,13 +3,13 @@
   (:import (org.keyczar DefaultKeyType GenericKeyczar KeyczarEncryptedReader KeyczarFileReader)
     (org.keyczar.enums KeyPurpose KeyStatus)))
 
-(defn reader [name]
-  (KeyczarFileReader. name))
+(defn reader
+  ([name] (KeyczarFileReader. name))
+  ([name guard] (KeyczarEncryptedReader. (reader name) guard)))
 
 (defn open
   ([name] (GenericKeyczar. (reader name)))
-  ([name guard]
-    (KeyczarEncryptedReader. (reader name) guard)))
+  ([name guard] (GenericKeyczar. (reader name guard))))
 
 (defn create
   ([name] (create name "AES"))
