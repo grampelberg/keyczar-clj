@@ -1,6 +1,5 @@
 (ns keyczar.cert
-  (:require [clojure.data.codec.base64 :as b64]
-    [keyczar.set.guard :as guard])
+  (:require [clojure.data.codec.base64 :as b64])
   (:import (java.security KeyFactory)
     (java.security.interfaces RSAPrivateCrtKey)
     (java.security.spec PKCS8EncodedKeySpec)

@@ -1,18 +1,12 @@
 (ns keyczar.set.guard
-  (:require [keyczar.set :as set])
+  (:require [keyczar.set :as set]
+    [keyczar.reader :as reader])
   (:import (org.keyczar Crypter GenericKeyczar PkcsKeyReader)
     (org.keyczar.enums KeyPurpose RsaPadding)
     (java.io ByteArrayInputStream)))
 
-; (defn import [name passphrase]
-;   )
-
-(defn from-cert [cert passphrase]
-  (GenericKeyczar. (PkcsKeyReader.
-    (. KeyPurpose DECRYPT_AND_ENCRYPT)
-    (ByteArrayInputStream. (.getBytes cert))
-    (. RsaPadding OAEP)
-    passphrase)))
+(defn from-cert [pkcs pass]
+  (Crypter. (reader/memory pkcs pass)))
 
 (defn export [name passphrase]
   (let [source (set/open name)]
