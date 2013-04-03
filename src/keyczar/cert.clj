@@ -2,7 +2,7 @@
   (:require
     [clojure.java.io :as io])
   (:import
-    (org.keyczar RsaPrivateKey PkcsKeyReader)
+    (org.keyczar DefaultKeyType PkcsKeyReader)
     (org.keyczar.enums KeyPurpose RsaPadding)
     (org.keyczar.util Util)))
 
@@ -13,5 +13,10 @@
     RsaPadding/OAEP
     pass))
 
+(defn generate []
+  (.generate
+    (. DefaultKeyType/RSA_PRIV getBuilder)
+    (. DefaultKeyType/RSA_PRIV applyDefaultParameters nil)))
+
 (defn create [pass]
-  (.getPemString (. RsaPrivateKey generate RsaPadding/OAEP) pass))
+  (.getPemString (generate) pass))
