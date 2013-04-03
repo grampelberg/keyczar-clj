@@ -1,6 +1,11 @@
 (ns keyczar.set
   (:require [keyczar.metadata :as metadata])
-  (:import (org.keyczar DefaultKeyType GenericKeyczar KeyczarEncryptedReader KeyczarFileReader)
+  (:import
+    (org.keyczar
+      DefaultKeyType
+      GenericKeyczar
+      KeyczarEncryptedReader
+      KeyczarFileReader)
     (org.keyczar.enums KeyPurpose KeyStatus)))
 
 (defn reader
