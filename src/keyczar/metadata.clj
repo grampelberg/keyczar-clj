@@ -1,7 +1,7 @@
 (ns keyczar.metadata
   (:require [clojure.java.io :as io])
   (:import
-    (org.keyczar Keyczar KeyMetadata KeyVersion)
+    (org.keyczar DefaultKeyType Keyczar KeyMetadata KeyVersion)
     (org.keyczar.enums KeyPurpose KeyStatus)))
 
 (defn generate [name]
