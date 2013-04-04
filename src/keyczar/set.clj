@@ -16,14 +16,11 @@
   ([name] (GenericKeyczar. (reader name)))
   ([name guard] (GenericKeyczar. (reader name guard))))
 
-(defn create
-  ([name] (create name "AES"))
-  ([name type]
-    (metadata/create name
-      (eval (read-string (str "DefaultKeyType" "/" type))))
-    (let [set (open name)]
-      (.addVersion set (. KeyStatus PRIMARY))
-      set)))
+(defn create [name]
+  (metadata/file name DefaultKeyType/AES)
+  (let [set (open name)]
+    (.addVersion set (. KeyStatus PRIMARY))
+    set))
 
 (defn location [set]
   (str (.. set getMetadata getName) "/"))

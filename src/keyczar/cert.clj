@@ -1,10 +1,8 @@
 (ns keyczar.cert
   (:require
     [clojure.java.io :as io])
-  (:import
-    (org.keyczar DefaultKeyType PkcsKeyReader)
-    (org.keyczar.enums KeyPurpose RsaPadding)
-    (org.keyczar.util Util)))
+  (:import (org.keyczar DefaultKeyType PkcsKeyReader)
+    (org.keyczar.enums KeyPurpose RsaPadding)))
 
 (defn reader [pkcs pass]
   (PkcsKeyReader.
