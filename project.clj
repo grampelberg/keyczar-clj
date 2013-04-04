@@ -1,4 +1,4 @@
-(defproject keyczar "0.1.0-SNAPSHOT"
+(defproject org.saunter/keyczar "0.1.0-SNAPSHOT"
   :description "FIXME: write description"
   :url "https://github.com/pyronicide/keyczar-clj"
   :license {:name "Eclipse Public License"
