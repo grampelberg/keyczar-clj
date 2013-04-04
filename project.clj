@@ -1,4 +1,4 @@
-(defproject keyczar "0.1.0-SNAPSHOT"
+(defproject keyczar "0.1.1-SNAPSHOT"
   :description "Clojure wrapper for keyczar"
   :url "https://github.com/pyronicide/keyczar-clj"
   :license {:name "Eclipse Public License"
