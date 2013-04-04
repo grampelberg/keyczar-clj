@@ -19,5 +19,5 @@
   (.write wrtr
     (..
       (KeyMetadata.
-        name (. KeyPurpose DECRYPT_AND_ENCRYPT) type)
-      toString (getBytes (. Keyczar DEFAULT_ENCODING))))))
+        name KeyPurpose/DECRYPT_AND_ENCRYPT type)
+      toString (getBytes Keyczar/DEFAULT_ENCODING)))))

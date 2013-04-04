@@ -19,7 +19,7 @@
 (defn create [name]
   (metadata/file name DefaultKeyType/AES)
   (let [set (open name)]
-    (.addVersion set (. KeyStatus PRIMARY))
+    (.addVersion set KeyStatus/PRIMARY)
     set))
 
 (defn location [set]
