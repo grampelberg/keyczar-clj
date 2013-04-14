@@ -16,6 +16,7 @@
   ([name] (GenericKeyczar. (reader name)))
   ([name guard] (GenericKeyczar. (reader name guard))))
 
+;; Allow creation of different key types here
 (defn create [name]
   (metadata/file name DefaultKeyType/AES)
   (let [set (open name)]
